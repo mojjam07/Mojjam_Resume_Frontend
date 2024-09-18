@@ -1,0 +1,47 @@
+.skills-section {
+  padding: 50px 0;
+  background-color: #fefefe; /* Light grey background */
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .skill-name h5 {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .progress {
+    background-color: rgb(201, 209, 249);
+    transition: background-color 0.3s ease;
+  }
+  
+}
+
+/* Dark mode adjustments */
+body.dark-mode .skills-section {
+  background-color: #333;
+  color: #f0f0f0;
+
+  h2 {
+    color: #f0f0f0;
+  }
+
+  .skill-name h5 {
+    color: #f0f0f0; /* Adjust color for dark mode */
+  }
+
+  .progress {
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.2
+    ); /* Slightly transparent white for progress bar background in dark mode */
+  }
+}

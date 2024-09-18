@@ -1,0 +1,210 @@
+/* Testimonial Section */
+.testimonial-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* Dark mode styles */
+  body.dark-mode & {
+    background-color: #444;
+    color: #f0f0f0;
+  }
+
+  .testimonial-card {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease,
+      color 0.3s ease;
+    padding: 30px;
+    border-radius: 10px;
+    color: #555;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Dark mode styles for the card */
+    body.dark-mode & {
+      background-color: #555;
+      color: #ddd;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 10px;
+      color: #333;
+      transition: color 0.3s ease;
+
+      /* Dark mode style */
+      body.dark-mode & {
+        color: #fff;
+      }
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      color: #777;
+      margin-top: 15px;
+      line-height: 1.5;
+      transition: color 0.3s ease;
+
+      /* Dark mode style */
+      body.dark-mode & {
+        color: #ccc;
+      }
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 2px solid #777;
+      transition: border-color 0.3s ease;
+
+      /* Dark mode style */
+      body.dark-mode & {
+        border-color: #fff;
+      }
+    }
+  }
+
+  .text-center {
+    margin-top: 30px;
+
+    .btn-primary {
+      font-size: 1rem;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #333;
+      border: 2px solid #333;
+      transition: background-color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #414142;
+        color: #fff;
+        border: 2px solid #414142;
+      }
+
+      /* Dark mode style */
+      body.dark-mode & {
+        background-color: #333;
+        border: 2px solid #777;
+        color: #fff;
+
+        &:hover {
+          background-color: #555;
+          border-color: #888;
+        }
+      }
+    }
+  }
+}
+
+/* Modal Styles */
+.modal-header {
+  border-bottom: none;
+
+  h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+
+    /* Dark mode style */
+    body.dark-mode & {
+      color: #ddd;
+    }
+  }
+}
+
+.modal-footer {
+  border-top: none;
+
+  .btn-secondary {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #565e64;
+    }
+
+    /* Dark mode style */
+    body.dark-mode & {
+      background-color: #444;
+      color: #ddd;
+
+      &:hover {
+        background-color: #565e64;
+      }
+    }
+  }
+}
+
+.modal-button {
+  margin: 5px 0;
+  background-color: #fff;
+  border: 1.5px solid rgb(213, 211, 211);
+  color: rgb(110, 110, 110);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    background-color: #333;
+    border-color: #333;
+  }
+
+  /* Dark mode style */
+  body.dark-mode & {
+    background-color: #444;
+    color: #ddd;
+    border-color: #888;
+
+    &:hover {
+      background-color: #555;
+      border-color: #aaa;
+    }
+  }
+}
+
+.plus-icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  .plus-icon {
+    font-size: 40px;
+    color: #525353;
+    cursor: pointer;
+
+    &:hover {
+      color: #8d8e8d;
+    }
+
+  body.dark-mode & {
+    color: #ccc;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+    .modal-button {
+      margin: 5px 0;
+      background-color: #fff;
+      border: 1.5px solid rgb(213, 211, 211);
+      color: rgb(110, 110, 110);
+
+      &:hover {
+        background-color: #333;
+        border-color: #333;
+      }
+    }
+  }
+}

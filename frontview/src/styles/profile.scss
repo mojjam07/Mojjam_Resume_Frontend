@@ -1,0 +1,47 @@
+/* Profile Section */
+.profile-section {
+  background-color: #ffffff;
+  color: #000;
+  padding: 2rem 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-section .location-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+body.dark-mode .profile-section .location-text {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+body.dark-mode .profile-section {
+  background-color: #222;
+  color: #fff;
+}
+
+.profile-picture {
+  max-width: 200px;
+  margin-bottom: 1rem;
+  border: 2px solid #777;
+  transition: filter 0.3s ease; /* Adding a transition effect for dark mode changes */
+}
+
+body.dark-mode .profile-picture {
+  filter: brightness(
+    0.8
+  ); /* Optional: You can adjust the brightness of the image in dark mode */
+  border: 1px solid #fff;
+}
+
+.bio {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .bio {
+  color: #aaa; /* Change bio color in dark mode */
+}

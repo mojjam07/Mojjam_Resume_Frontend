@@ -1,0 +1,75 @@
+/* Education Section */
+.education-section {
+  background-color: #eeeeee;
+  color: #333;
+  padding: 60px 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .education-section {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+/* Accordion Button */
+.accordion-button {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .accordion-button {
+  background-color: #444;
+  color: #f5f5f5;
+  border-color: #555;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #495057;
+  background-color: #e9ecef;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: #666;
+}
+
+/* Accordion Item */
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .accordion-item {
+  border-color: #555;
+}
+
+/* Accordion Header */
+.accordion-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .accordion-header {
+  background-color: #444;
+  border-bottom-color: #555;
+}
+
+/* Accordion Body */
+.accordion-body {
+  background-color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .accordion-body {
+  background-color: #555;
+  color: #f5f5f5;
+}
+
+/* Margin for multiple accordion items */
+.accordion-item + .accordion-item {
+  margin-top: 1rem;
+}

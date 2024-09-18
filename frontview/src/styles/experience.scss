@@ -1,0 +1,55 @@
+/* Experience Section */
+.experience-section {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+body.dark-mode .experience-section {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+/* Experience Card */
+.experience-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for box-shadow */
+}
+
+body.dark-mode .experience-card {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Lighter box-shadow in dark mode */
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-card .card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease; /* Smooth transition for title color */
+}
+
+body.dark-mode .experience-card .card-title {
+  color: #444; /* Lighter text in dark mode */
+}
+
+.experience-card .card-subtitle {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  transition: color 0.3s ease; /* Smooth transition for subtitle color */
+}
+
+body.dark-mode .experience-card .card-subtitle {
+  color: #ccc; /* Lighter text in dark mode */
+}
+
+.experience-card .card-text {
+  font-size: 0.9rem;
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+body.dark-mode .experience-card .card-text {
+  color: #444; /* Lighter text in dark mode */
+}

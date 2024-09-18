@@ -1,0 +1,96 @@
+/* Contact Section */
+.contact-section {
+  padding: 2rem 0;
+  background-color: #f1f1f1;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .contact-section {
+  background-color: #222; /* Dark background for dark mode */
+  color: #fff; /* Light text for dark mode */
+}
+
+.contact-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* Dark Mode for Heading */
+body.dark-mode .contact-section h2 {
+  color: #ddd; /* Light color for the heading in dark mode */
+}
+
+.contact-section .form-control {
+  margin-bottom: 1rem;
+  background-color: #fff; /* Default form background */
+  color: #333; /* Default text color */
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+.contact-section .form-control::placeholder {
+  color: #bcbcbc;
+}
+
+/* Dark Mode for Form Control */
+body.dark-mode .contact-section .form-control {
+  background-color: #fff; /* Darker form background in dark mode */
+  color: #000; /* Lighter text color in dark mode */
+  border: 1px solid #666; /* Border adjustment for dark mode */
+}
+
+.contact-section .btn-primary {
+  width: 50%;
+  background-color: #fff;
+  color: #222;
+  border: none;
+  transition: background-color 0.3s ease, border 0.3s ease; /* Smooth transition for button */
+}
+
+/* Hover State */
+.contact-section .btn-primary:hover {
+  background-color: #414142;
+  border: 2px solid #414142;
+  transition: 0.3s ease-in-out;
+}
+
+/* Dark Mode for Primary Button */
+body.dark-mode .contact-section .btn-primary {
+  background-color: #555; /* Darker button background for dark mode */
+  color: #fff; /* Light text for buttons in dark mode */
+}
+
+/* Hover State for Dark Mode */
+body.dark-mode .contact-section .btn-primary:hover {
+  background-color: #777; /* Lighter button background on hover */
+  border: 2px solid #777;
+}
+
+.contact-section .contact-btn {
+  background-color: #fff;
+  border: 2px solid #414142;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+/* Hover State for Contact Button */
+.contact-section .contact-btn:hover {
+  background-color: #414142;
+  color: #fff;
+  border: 2px solid #414142;
+  transition: 0.3s ease-in-out;
+}
+
+/* Dark Mode for Contact Button */
+body.dark-mode .contact-section .contact-btn {
+  background-color: #fff; /* Dark button background for dark mode */
+  color: #888; /* Light text in dark mode */
+  border: 2px solid #555; /* Darker border for dark mode */
+}
+
+/* Hover State for Contact Button in Dark Mode */
+body.dark-mode .contact-section .contact-btn:hover {
+  background-color: #555; /* Lighter button background in dark mode hover */
+  border: 2px solid #555;
+  color: #fff;
+}

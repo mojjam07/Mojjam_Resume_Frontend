@@ -1,0 +1,70 @@
+/* Footer Section */
+.footer-section {
+  background-color: #ddd;
+  color: #333;
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 3px solid #5d5c5c;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .footer-section {
+  background-color: #222;
+  color: #f0f0f0;
+}
+
+.footer-section h5 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .footer-section h5 {
+  color: #f0f0f0;
+}
+
+.sponsor-logos img {
+  margin: 0.5rem;
+  width: 80px;
+  height: auto;
+  filter: brightness(1); /* Default brightness */
+}
+.sponsor-logos img:hover {
+  border-radius: 50px;
+  border: 1px solid #fff;
+}
+
+body.dark-mode .sponsor-logos img {
+  filter: brightness(0.8); /* Dark mode adjustment */
+  border: 1px solid #fff;
+  border-radius: 50px;
+}
+
+body.dark-mode .sponsor-logos img:hover {
+  filter: brightness(1);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: #343a40;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .social-icons a {
+  color: #f0f0f0;
+}
+
+body.dark-mode .social-icons a:hover {
+  color: #1e90ff; /* Adjust hover color in dark mode */
+}

@@ -1,0 +1,90 @@
+/* Project Section */
+.project-section {
+  background-color: #fafafa;
+  padding: 50px 0;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode for Project Section */
+body.dark-mode .project-section {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+/* Project Section Heading */
+.project-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+}
+
+/* Show More Button Style */
+.show-more {
+  background-color: #fff;
+  border: 2px solid #333;
+  color: #333;
+}
+
+/* Project Card Styles */
+.project-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Dark Mode Adjustments for Project Card */
+body.dark-mode .project-card {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Fixed Image Size */
+.fixed-size-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Card Title */
+.project-card .card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Card Text */
+.project-card .card-text {
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Button Primary Styles */
+.project-card .btn-primary {
+  background-color: #ffffff;
+  border: 2px solid #333;
+  color: #333;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button Hover in Light Mode */
+.project-card .btn-primary:hover {
+  background-color: #414142;
+  color: #fff;
+  border: 2px solid #414142;
+  transition: 0.3s ease-in-out;
+}
+
+/* Button Styles in Dark Mode */
+body.dark-mode .project-card .btn-primary {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #333;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button Hover in Dark Mode */
+body.dark-mode .project-card .btn-primary:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+  transition: 0.3s ease-in-out;
+}

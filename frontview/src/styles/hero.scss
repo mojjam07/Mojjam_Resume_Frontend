@@ -1,0 +1,159 @@
+/* General Section Styling */
+section {
+  padding: 30px 0; /* Adjusted to reduce general section padding */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 30px 0; /* Reduced padding from 50px to 30px */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  .img-fluid {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 50px; /* Reduced margin-bottom for the image */
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #000; /* Default for light mode */
+    margin-top: 50px; /* Reduced margin-top for the heading */
+  }
+
+  .my-name {
+    color: #01b42e;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #555; /* Default text color */
+  }
+
+  .started-button {
+    background-color: #fff;
+    border: 2px solid;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #414142;
+      border-color: #414142;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+/* Dark Mode Hero Section */
+body.dark-mode .hero-section {
+  background-color: #222;
+  color: #cfc8c8;
+
+  h1 {
+    color: #fff; /* Text changes to white in dark mode */
+  }
+
+  p {
+    color: #ddd; /* Slightly lighter for readability in dark mode */
+  }
+
+  .started-button {
+    background-color: #333; /* Darker button for dark mode */
+    border-color: #fff;
+    color: #fff;
+
+    &:hover {
+      background-color: #f0f0f0;
+      border-color: #888;
+      color: #000;
+    }
+  }
+}
+/**/
+/* Modal Header Styling */
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 15px 30px;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+/* Modal Body Styling */
+.modal-body {
+  padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+/* Button Styling */
+.modal-button {
+  margin-top: 20px;
+  background-color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+  background-color: #218838;
+}
+
+/* Dark Mode Styling */
+body.dark-mode .modal-header {
+  background-color: #333;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .modal-title {
+  color: #fff;
+}
+
+body.dark-mode .modal-body {
+  background-color: #444;
+  color: #ddd;
+}
+
+body.dark-mode .form-label {
+  color: #ccc;
+}
+
+body.dark-mode .form-control {
+  background-color: #555;
+  color: #ddd;
+  border: 1px solid #666;
+}
+
+body.dark-mode .modal-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+body.dark-mode .modal-button:hover {
+  background-color: #218838;
+}

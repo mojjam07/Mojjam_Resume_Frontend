@@ -1,0 +1,226 @@
+/* Services Section */
+.services-section {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+  color: #333;
+
+  /* Dark mode adjustments */
+  body.dark-mode & {
+    background-color: #444; /* Dark background */
+    color: #f0f0f0; /* Lighter text color for better contrast */
+  }
+}
+
+.services-section .card-img-top {
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  padding: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+.services-section .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.services-section .card-title {
+  margin-bottom: 20px;
+
+  /* Dark mode adjustment for title */
+  body.dark-mode & {
+    color: #333; /* Lighter text color */
+  }
+}
+
+.services-section .btn-primary {
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+
+  /* Dark mode button adjustments */
+  body.dark-mode & {
+    background-color: #fff; /* Dark background for button */
+    color: #333; /* White text for better contrast */
+    border: 2px solid #333; /* White border */
+  }
+}
+
+.services-section .btn-primary:hover {
+  background-color: #414142;
+  color: #fff;
+  border: 2px solid #414142;
+  transition: 0.3s ease-in-out;
+
+  /* Dark mode hover effect */
+  body.dark-mode & {
+    background-color: #666; /* Lighter shade of dark for hover */
+    border-color: #666;
+    color: #fff;
+  }
+}
+
+/* Modal Header */
+.modal-header {
+  background-color: #333; /* Primary color */
+  color: #fff;
+  border-bottom: none;
+
+  /* Dark mode modal header */
+  body.dark-mode & {
+    background-color: #333; /* Darker blue */
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .close {
+    color: #fff;
+    opacity: 1;
+
+    /* Dark mode close button */
+    body.dark-mode & {
+      color: #ddd;
+    }
+  }
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px 30px;
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+
+    /* Dark mode form label */
+    body.dark-mode & {
+      color: #f0f0f0; /* Lighter color for labels */
+    }
+  }
+
+  .form-control {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    &::placeholder {
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    /* Dark mode form control */
+    body.dark-mode & {
+      background-color: #333; /* Darker input background */
+      color: #f0f0f0; /* Light text */
+      border-color: #555; /* Darker border */
+    }
+  }
+
+  textarea.form-control {
+    resize: none;
+
+    /* Dark mode textarea */
+    body.dark-mode & {
+      background-color: #333;
+      color: #f0f0f0;
+      border-color: #555;
+    }
+  }
+}
+
+/* Modal Footer */
+.modal-footer {
+  background-color: #f9f9f9;
+  border-top: none;
+
+  /* Dark mode modal footer */
+  body.dark-mode & {
+    background-color: #444; /* Darker footer background */
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+    }
+
+    /* Dark mode primary button */
+    body.dark-mode & {
+      background-color: #0056b3;
+      border-color: #004085;
+      color: #f0f0f0;
+    }
+  }
+
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    border-color: #ccc;
+
+    &:hover {
+      background-color: #e6e6e6;
+      color: #333;
+    }
+
+    /* Dark mode secondary button */
+    body.dark-mode & {
+      background-color: #555;
+      border-color: #666;
+      color: #f0f0f0;
+
+      &:hover {
+        background-color: #333;
+        border-color: #444;
+      }
+    }
+  }
+}
+
+/* Modal Button */
+.modal-button {
+  margin: 5px 0;
+  background-color: #fff;
+  border: 1.5px solid rgb(213, 211, 211);
+  color: rgb(110, 110, 110);
+
+  &:hover {
+    background-color: #333;
+    border-color: #333;
+  }
+
+  /* Dark mode modal button */
+  body.dark-mode & {
+    background-color: #666;
+    color: #fff;
+    border-color: #777;
+
+    &:hover {
+      background-color: #444;
+      border-color: #555;
+    }
+  }
+}
