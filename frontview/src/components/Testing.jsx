@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/testing.css";
 // import { getNew } from "../services/api";
+import { getNew } from "../../";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
