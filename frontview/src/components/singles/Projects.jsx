@@ -8,11 +8,12 @@ const ProjectSection = () => {
   const [projects, setProjects] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
+  const API_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     // Simulate a delay before fetching data
     setTimeout(() => {
-      fetch("http://localhost:8000/api/projects/") // Replace with your actual API URL
+      fetch(`${API_URL}projects/`) // Replace with your actual API URL
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch projects data");

@@ -5,9 +5,11 @@ import "../../styles/experience.scss";
 
 const ExperienceSection = () => {
   const [experiences, setExperiences] = useState([]);
-
+  const API_URL = process.env.REACT_APP_API_URL;
+  
   useEffect(() => {
-    fetch("http://localhost:8000/api/experience/") // Replace with your actual backend URL
+    fetch(`${API_URL}experience/`)
+      //fetch("http://localhost:8000/api/experience/") // Replace with your actual backend URL
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch experiences data");

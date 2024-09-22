@@ -20,11 +20,13 @@ const TestimonialSection = () => {
   const [showFormModal, setShowFormModal] = useState(false); // For the form modal
   const [image, setImage] = useState(null); // State to store the image file
   const [loading, setLoading] = useState(true); // State to manage loading
+  const API_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      fetch("http://localhost:8000/api/testimonials/") // Replace with your actual backend URL
+      fetch(`${API_URL}/testimonials`)
+        //fetch("http://localhost:8000/api/testimonials/") // Replace with your actual backend URL
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch testimonials");
@@ -54,7 +56,8 @@ const TestimonialSection = () => {
     }
 
     // Submit form data with image to the backend
-    fetch("http://localhost:8000/api/newtestimonials/", {
+    fetch(`${API_URL}/newtestimonials`, {
+      //fetch("http://localhost:8000/api/newtestimonials/", {
       method: "POST",
       body: formData,
     })

@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/services.scss";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const ServicesSection = () => {
   const [services, setServices] = useState([]);
@@ -25,7 +26,8 @@ const ServicesSection = () => {
 
   // Fetch services data from the backend API
   useEffect(() => {
-    fetch("http://localhost:8000/api/services/")
+    fetch(`${API_URL}/services`)
+      //fetch("http://localhost:8000/api/services/")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
