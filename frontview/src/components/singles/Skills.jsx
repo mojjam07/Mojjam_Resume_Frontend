@@ -5,10 +5,10 @@ import "../../styles/skills.scss";
 
 const SkillsSection = () => {
   const [skills, setSkills] = useState([]);
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = process.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch(`${API_URL}skills`)
+    fetch(`${API_URL}/skills`)
       //fetch("http://localhost:8000/api/skills/") // Replace with your actual backend URL
       .then((response) => {
         if (!response.ok) {
