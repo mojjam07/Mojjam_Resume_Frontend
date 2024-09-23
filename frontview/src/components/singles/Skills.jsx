@@ -8,9 +8,30 @@ const SkillsSection = () => {
 
   const API_URL = import.meta.env.VITE_API_URL;
 
+  // useEffect(() => {
+  //   fetch(`${API_URL}/skills`)
+  //     //fetch("http://localhost:8000/api/skills/") // Replace with your actual backend URL
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch skills data");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setSkills(data);
+  //     })
+  //     .catch((error) => console.error("Error fetching skills:", error));
+  // }, []);
+
   useEffect(() => {
-    fetch(`${API_URL}/skills`)
-      //fetch("http://localhost:8000/api/skills/") // Replace with your actual backend URL
+    const apiUrl = import.meta.env.VITE_API_URL; // Ensure API_URL is correctly defined
+    console.log(apiUrl); // Debugging the API URL
+
+    fetch(`${apiUrl}/api/skills/`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch skills data");
