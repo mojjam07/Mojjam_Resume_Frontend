@@ -8,7 +8,8 @@ const ProjectSection = () => {
   const [projects, setProjects] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
-  const API_URL = process.env.REACT_APP_API_URL;
+
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     // Simulate a delay before fetching data
@@ -91,7 +92,11 @@ const ProjectSection = () => {
         </Row>
         {projects.length > 3 && (
           <div className="text-center">
-            <Button variant="secondary" className="show-more" onClick={handleShowMore}>
+            <Button
+              variant="secondary"
+              className="show-more"
+              onClick={handleShowMore}
+            >
               Show More
             </Button>
           </div>

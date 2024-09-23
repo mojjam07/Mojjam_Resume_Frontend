@@ -20,7 +20,8 @@ const TestimonialSection = () => {
   const [showFormModal, setShowFormModal] = useState(false); // For the form modal
   const [image, setImage] = useState(null); // State to store the image file
   const [loading, setLoading] = useState(true); // State to manage loading
-  const API_URL = process.env.REACT_APP_API_URL;
+
+  const API_URL = import.meta.env.REACT_APP_API_URL;
 
   useEffect(() => {
     setLoading(true);

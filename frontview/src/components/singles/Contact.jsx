@@ -10,6 +10,8 @@ const ContactSection = () => {
     message: "",
   });
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -21,7 +23,7 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8000/api/contacts/", {
+    const response = await fetch(`${API_URL}/contacts/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
