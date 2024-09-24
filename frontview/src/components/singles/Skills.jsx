@@ -23,27 +23,36 @@ const SkillsSection = () => {
   //     .catch((error) => console.error("Error fetching skills:", error));
   // }, []);
 
-  useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL; // Ensure API_URL is correctly defined
-    console.log(apiUrl); // Debugging the API URL
+  // useEffect(() => {
+  //   const apiUrl = import.meta.env.VITE_API_URL; // Ensure API_URL is correctly defined
+  //   console.log(apiUrl); // Debugging the API URL
 
-    fetch(`${apiUrl}/api/skills/`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch skills data");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setSkills(data);
-      })
-      .catch((error) => console.error("Error fetching skills:", error));
-  }, []);
+  //   fetch(`${apiUrl}/api/skills/`, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch skills data");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setSkills(data);
+  //     })
+  //     .catch((error) => console.error("Error fetching skills:", error));
+  // }, []);
+
+  fetch(`${API_URL}/api/skills/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      //"X-CSRFToken": csrfToken, // Include CSRF token in headers
+    },
+    body: JSON.stringify(data), // Send your data here
+  });
 
   return (
     <section className="skills-section" id="skills">
