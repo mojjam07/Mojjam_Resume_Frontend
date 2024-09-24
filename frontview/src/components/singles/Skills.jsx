@@ -28,6 +28,7 @@ const SkillsSection = () => {
     console.log(apiUrl); // Debugging the API URL
 
     fetch(`${apiUrl}/api/skills/`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
