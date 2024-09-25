@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import sponsor from "../../assets/my_logo3.svg";
-import { FaWhatsapp, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import "../../styles/footer.scss";
 
 const FooterSection = () => {

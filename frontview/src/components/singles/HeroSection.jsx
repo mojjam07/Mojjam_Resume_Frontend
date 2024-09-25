@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import HeroImage from "../../assets/me__.jgg";
+import HeroImage from "../../assets/me__.png";
 import "../../styles/hero.scss"; // Your custom styling if needed
 
 const HeroSection = () => {
