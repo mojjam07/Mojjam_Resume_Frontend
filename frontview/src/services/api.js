@@ -1,9 +1,9 @@
-import cors from "cors";
+// import cors from "cors";
 // const cors = require("cors");
 
 // app.use(cors((origin = "http://localhost:8000/api")));
 
-const API_URL = import.meta.env.VITE_API_URL;
+// const API_URL = import.meta.env.VITE_API_URL;
 
 // API_URL.use(cors((origin = "http://localhost:8000/api")));
 

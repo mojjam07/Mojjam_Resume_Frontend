@@ -7,10 +7,9 @@ const SkillsSection = () => {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    const apiUrl =
-      import.meta.env.VITE_API_URL || "https://mojjam-backend.onrender.com";
+    const apiUrl = import.meta.env.VITE_API_URL;
 
-    fetch("https://mojjam-backend.onrender.com/api/skills/", {
+    fetch(`${apiUrl}/api/skills/`, {
       headers: {
         "Content-Type": "application/json",
       },
