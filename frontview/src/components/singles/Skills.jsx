@@ -10,7 +10,7 @@ const SkillsSection = () => {
     const apiUrl =
       import.meta.env.VITE_API_URL || "https://mojjam-backend.onrender.com";
 
-    fetch(`${apiUrl}/api/skills/`, {
+    fetch("https://mojjam-backend.onrender.com/api/skills/", {
       headers: {
         "Content-Type": "application/json",
       },
