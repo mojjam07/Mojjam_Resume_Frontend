@@ -3,18 +3,19 @@ import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import Loading from "../../components/singles/Loading";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/projects.scss";
+import { API_URL } from "../../services/api";
 
 const ProjectSection = () => {
   const [projects, setProjects] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = import.meta.env.VITE_API_URL;
+  // const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     // Simulate a delay before fetching data
     setTimeout(() => {
-      fetch(`${API_URL}projects/`) // Replace with your actual API URL
+      fetch(`${API_URL}/api/projects/`) // Replace with your actual API URL
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch projects data");

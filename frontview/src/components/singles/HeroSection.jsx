@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HeroImage from "../../assets/me__.png";
 import "../../styles/hero.scss"; // Your custom styling if needed
+import { API_URL } from "../../services/api";
 
 const HeroSection = () => {
   const [showModal, setShowModal] = useState(false); // Modal visibility state
@@ -12,7 +13,7 @@ const HeroSection = () => {
     phone: "",
     question: "",
   });
-  const API_URL = import.meta.env.VITE_API_URL;
+  // const API_URL = import.meta.env.VITE_API_URL;
 
   // Handle modal show
   const handleShow = () => setShowModal(true);
@@ -34,7 +35,7 @@ const HeroSection = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${API_URL}questions/`, {
+      const response = await fetch(`${API_URL}/api/questions/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

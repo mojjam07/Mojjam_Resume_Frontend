@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/services.scss";
+import { API_URL } from "../../services/api";
 
 const ServicesSection = () => {
   const [services, setServices] = useState([]);
@@ -22,11 +23,11 @@ const ServicesSection = () => {
     service_type: "",
     description: "",
   });
-  const API_URL = import.meta.env.REACT_APP_API_URL;
+  // const API_URL = import.meta.env.REACT_APP_API_URL;
 
   // Fetch services data from the backend API
   useEffect(() => {
-    fetch(`${API_URL}/services`)
+    fetch(`${API_URL}/api/services`)
       //fetch("http://localhost:8000/api/services/")
       .then((response) => {
         if (!response.ok) {

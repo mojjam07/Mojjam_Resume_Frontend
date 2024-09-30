@@ -12,6 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "../../styles/testimonials.scss";
+import { API_URL } from "../../services/api";
 
 const TestimonialSection = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -21,12 +22,12 @@ const TestimonialSection = () => {
   const [image, setImage] = useState(null); // State to store the image file
   const [loading, setLoading] = useState(true); // State to manage loading
 
-  const API_URL = import.meta.env.REACT_APP_API_URL;
+  // const API_URL = import.meta.env.REACT_APP_API_URL;
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      fetch(`${API_URL}/testimonials`)
+      fetch(`${API_URL}/api/testimonials`)
         //fetch("http://localhost:8000/api/testimonials/") // Replace with your actual backend URL
         .then((response) => {
           if (!response.ok) {

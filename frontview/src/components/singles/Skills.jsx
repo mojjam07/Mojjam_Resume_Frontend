@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/skills.scss";
+import { API_URL } from "../../services/api";
 
 const SkillsSection = () => {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL;
+    // const apiUrl = import.meta.env.VITE_API_URL;
 
-    fetch(`${apiUrl}/api/skills/`, {
+    fetch(`${API_URL}/api/skills/`, {
       headers: {
         "Content-Type": "application/json",
       },

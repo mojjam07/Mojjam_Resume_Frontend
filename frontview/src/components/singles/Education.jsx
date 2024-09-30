@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/education.scss";
+import { API_URL } from "../../services/api";
 
 const EducationSection = () => {
   const [educationData, setEducationData] = useState([]);
 
-  const API_URL = process.env.REACT_APP_API_URL;
+  // const API_URL = process.env.REACT_APP_API_URL;
   useEffect(() => {
-    fetch(`${API_URL}education/`)
+    fetch(`${API_URL}/api/education/`)
       //fetch("http://localhost:8000/api/education/") // Replace `API_URL` with your actual backend URL
       .then((response) => {
         if (!response.ok) {

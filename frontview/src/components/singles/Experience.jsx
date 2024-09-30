@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/experience.scss";
+import { API_URL } from "../../services/api";
 
 const ExperienceSection = () => {
   const [experiences, setExperiences] = useState([]);
-  const API_URL = process.env.REACT_APP_API_URL;
-  
+  // const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
-    fetch(`${API_URL}experience/`)
+    fetch(`${API_URL}/api/experience/`)
       //fetch("http://localhost:8000/api/experience/") // Replace with your actual backend URL
       .then((response) => {
         if (!response.ok) {

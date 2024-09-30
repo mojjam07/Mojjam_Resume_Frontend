@@ -1,6 +1,5 @@
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
-
 import logo from "../../assets/my_logo3.svg";
 import "../../styles/navbar.scss";
 import resume from "../../assets/resume.pdf";
