@@ -15,7 +15,11 @@ const ProjectSection = () => {
   useEffect(() => {
     // Simulate a delay before fetching data
     setTimeout(() => {
-      fetch(`${API_URL}/api/projects/`) // Replace with your actual API URL
+      fetch(`${API_URL}/api/projects/`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }) // Replace with your actual API URL
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch projects data");
