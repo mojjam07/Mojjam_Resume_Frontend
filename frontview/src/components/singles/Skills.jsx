@@ -11,6 +11,7 @@ const SkillsSection = () => {
     // const apiUrl = import.meta.env.VITE_API_URL;
 
     fetch(`${API_URL}/api/skills/`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
