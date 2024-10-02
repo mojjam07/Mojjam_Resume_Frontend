@@ -27,7 +27,12 @@ const ServicesSection = () => {
 
   // Fetch services data from the backend API
   useEffect(() => {
-    fetch(`${API_URL}/api/services`)
+    fetch(`${API_URL}/api/services`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       //fetch("http://localhost:8000/api/services/")
       .then((response) => {
         if (!response.ok) {
