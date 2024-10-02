@@ -16,6 +16,7 @@ const ProjectSection = () => {
     // Simulate a delay before fetching data
     setTimeout(() => {
       fetch(`${API_URL}/api/projects/`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
