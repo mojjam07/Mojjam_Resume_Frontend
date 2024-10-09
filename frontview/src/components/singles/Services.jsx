@@ -78,7 +78,7 @@ const ServicesSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8000/api/consults/", {
+    const response = await fetch(`${API_URL}/api/consults/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

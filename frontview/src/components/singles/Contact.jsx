@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/contact.scss";
+import { API_URL } from "../../services/api";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ const ContactSection = () => {
     message: "",
   });
 
-  const API_URL = import.meta.env.VITE_API_URL;
+  // const API_URL = import.meta.env.VITE_API_URL;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +24,7 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${API_URL}/contacts/`, {
+    const response = await fetch(`${API_URL}/api/contacts/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

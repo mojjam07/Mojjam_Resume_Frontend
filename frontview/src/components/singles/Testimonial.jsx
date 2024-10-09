@@ -58,7 +58,7 @@ const TestimonialSection = () => {
     }
 
     // Submit form data with image to the backend
-    fetch(`${API_URL}/newtestimonials`, {
+    fetch(`${API_URL}/api/newtestimonials`, {
       //fetch("http://localhost:8000/api/newtestimonials/", {
       method: "POST",
       body: formData,
