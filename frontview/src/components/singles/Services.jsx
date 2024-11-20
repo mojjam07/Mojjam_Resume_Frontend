@@ -11,6 +11,10 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/services.scss";
 import { API_URL } from "../../services/api";
+import web from "../../assets/web-design.png";
+import mobile from "../../assets/mobile.png";
+import ui from "../../assets/uiux.png";
+import consult from "../../assets/consult.png";
 
 const ServicesSection = () => {
   const [services, setServices] = useState([]);
@@ -23,27 +27,15 @@ const ServicesSection = () => {
     service_type: "",
     description: "",
   });
-  // const API_URL = import.meta.env.REACT_APP_API_URL;
 
-  // Fetch services data from the backend API
   useEffect(() => {
-    fetch(`${API_URL}/api/services`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      //fetch("http://localhost:8000/api/services/")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setServices(data);
-      })
-      .catch((error) => console.error("Fetch error:", error));
+    const localServices = [
+      { image: { web }, name: "Web Development" },
+      { image: { mobile }, name: "Mobile App Develpoment" },
+      { image: { ui }, name: "UIUX Design" },
+      { image: { consult }, name: "Tech Talk" },
+    ];
+    setServices(localServices);
   }, []);
 
   // Handle modal show
