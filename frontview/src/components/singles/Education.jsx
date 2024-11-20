@@ -9,18 +9,36 @@ const EducationSection = () => {
 
   // const API_URL = process.env.REACT_APP_API_URL;
   useEffect(() => {
-    fetch(`${API_URL}/api/education/`)
-      //fetch("http://localhost:8000/api/education/") // Replace `API_URL` with your actual backend URL
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch education data");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setEducationData(data);
-      })
-      .catch((error) => console.error("Error fetching education data:", error));
+    const localEducationData = [
+      {
+        degree: "Bachelor of Science",
+        institution: "Computer Science",
+        institution_name: "Southwestern University (Ikeja Campus)",
+        start_date: "2022/2023",
+        end_date: "2024/2025",
+        description:
+          "Studying the knowledge of computation, algorithms, and systems, enabling problem-solving and innovation through technology.",
+      },
+      {
+        degree: "National Diploma",
+        institution: "Computer Science",
+        institution_name: "Lagos City Polytechnic, Ikeja Lagos",
+        start_date: "2019/2020",
+        end_date: "2020/2021",
+        description:
+          "Studied the foundational knowledge of the course of study.",
+      },
+      {
+        degree: "FullStack",
+        institution: "Software Development",
+        institution_name: "COPHILD Consult",
+        start_date: "05/2024",
+        end_date: "10/2024",
+        description:
+          "Gained a taste of what FullStack is all about with some technologies such as Python and JavaScript",
+      },
+    ];
+    setEducationData(localEducationData);
   }, []);
 
   return (
