@@ -9,18 +9,33 @@ const ExperienceSection = () => {
   // const API_URL = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-    fetch(`${API_URL}/api/experience/`)
-      //fetch("http://localhost:8000/api/experience/") // Replace with your actual backend URL
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch experiences data");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setExperiences(data);
-      })
-      .catch((error) => console.error("Error fetching experiences:", error));
+    const localExperiences = [
+      {
+        job_title: "Intern/IT Support",
+        company_name: "Federal Airport Authority of Nigeria",
+        start_date: "2021-06-01",
+        end_date: "2022-05-31",
+        description:
+          "Gaining Experience of under the department of ICT in the Airport",
+      },
+      {
+        job_title: "Casual Staff",
+        company_name: "Federal Airport Authority of Nigeria",
+        start_date: "2022-06-01",
+        end_date: "2027-12-31",
+        description:
+          "Expanding my Experience in the department of ICT in the Airport",
+      },
+      {
+        job_title: "Software Technician",
+        company_name: "Mantel Technology Scanners",
+        start_date: "2023-02-01",
+        end_date: "2030-12-31",
+        description:
+          "Maintaining softwares and scanning equipments and surveillance installation",
+      },
+    ];
+    setExperiences(localExperiences);
   }, []);
 
   return (
