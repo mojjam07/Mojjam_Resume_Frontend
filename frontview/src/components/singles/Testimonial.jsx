@@ -22,13 +22,10 @@ const TestimonialSection = () => {
   const [image, setImage] = useState(null); // State to store the image file
   const [loading, setLoading] = useState(true); // State to manage loading
 
-  // const API_URL = import.meta.env.REACT_APP_API_URL;
-
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       fetch(`${API_URL}/api/testimonials`)
-        //fetch("http://localhost:8000/api/testimonials/") // Replace with your actual backend URL
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch testimonials");
@@ -37,8 +34,8 @@ const TestimonialSection = () => {
         })
         .then((data) => {
           setTestimonials(data);
-          setFirstThreeTestimonials(data.slice(0, 3)); // Get the first three testimonials
-          setLoading(false); // Stop loading once data is fetched
+          setFirstThreeTestimonials(data.slice(0, 3)); // Display first three
+          setLoading(false);
         })
         .catch((error) => {
           console.error("Error fetching testimonials:", error);

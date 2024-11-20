@@ -59,7 +59,7 @@ function MyNavbar() {
             className="download-button"
             variant="tertiary"
             href={resume} // Update with your file's path download
-            disabled
+            // disabled
           >
             Download CV
           </Button>
