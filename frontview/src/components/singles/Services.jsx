@@ -11,10 +11,10 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/services.scss";
 import { API_URL } from "../../services/api";
-import web from "../../assets/web-design.png";
-import mobile from "../../assets/mobile.png";
-import ui from "../../assets/uiux.png";
-import consult from "../../assets/consult.png";
+import web from "../../assets/web-design.jpg";
+import mobile from "../../assets/mobile.jpg";
+import ui from "../../assets/uiux.jpg";
+import consult from "../../assets/consult.jpg";
 
 const ServicesSection = () => {
   const [services, setServices] = useState([]);
