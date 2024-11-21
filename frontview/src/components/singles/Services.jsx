@@ -14,6 +14,7 @@ import web from "../../assets/web-design.png";
 import mobile from "../../assets/mobile.png";
 import ui from "../../assets/uiux.png";
 import consult from "../../assets/consult.png";
+import AxiosInstance from "../../services/AxiosInstance";
 
 const ServicesSection = () => {
   const [services, setServices] = useState([]);
@@ -69,28 +70,26 @@ const ServicesSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${API_URL}/api/consults/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await AxiosInstance.post("/api/consults/", formData);
 
-    if (response.ok) {
-      alert("Your message has been sent!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service_type: "",
-        description: "",
-      });
-    } else {
+      if (response.status === 201 || response.status === 200) {
+        alert("Your message has been sent!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service_type: "",
+          description: "",
+        });
+        handleClose(); // Close modal after submission
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
       alert("There was an issue sending your message. Please try again.");
     }
+
     console.log("Form submitted with data:", formData);
-    handleClose(); // Close modal after submission
   };
 
   return (
