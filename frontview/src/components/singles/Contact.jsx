@@ -86,7 +86,6 @@ const ContactSection = () => {
                 variant="primary"
                 type="submit"
                 className="contact-btn mt-3"
-                onClick={handleSubmit}
               >
                 Send Message
               </Button>
