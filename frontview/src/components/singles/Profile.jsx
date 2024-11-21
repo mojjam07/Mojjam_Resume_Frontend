@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import profileImage from "../../assets/myself_.png";
+import profileImage from "../../assets/me.png";
 import "../../styles/profile.scss";
 
 const ProfileSection = () => {

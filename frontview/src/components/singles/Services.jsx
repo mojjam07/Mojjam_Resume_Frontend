@@ -10,11 +10,10 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/services.scss";
-import { API_URL } from "../../services/api";
-import web from "../../assets/web-design.jpg";
-import mobile from "../../assets/mobile.jpg";
-import ui from "../../assets/uiux.jpg";
-import consult from "../../assets/consult.jpg";
+import web from "../../assets/web-design.png";
+import mobile from "../../assets/mobile.png";
+import ui from "../../assets/uiux.png";
+import consult from "../../assets/consult.png";
 
 const ServicesSection = () => {
   const [services, setServices] = useState([]);
@@ -30,10 +29,10 @@ const ServicesSection = () => {
 
   useEffect(() => {
     const localServices = [
-      { image: { web }, name: "Web Development" },
-      { image: { mobile }, name: "Mobile App Develpoment" },
-      { image: { ui }, name: "UIUX Design" },
-      { image: { consult }, name: "Tech Talk" },
+      { image: web, name: "Web Development" },
+      { image: mobile, name: "Mobile App Develpoment" },
+      { image: ui, name: "UIUX Design" },
+      { image: consult, name: "Tech Talk" },
     ];
     setServices(localServices);
   }, []);

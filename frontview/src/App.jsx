@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import Testing from "./components/Testing";
 import MyNavbar from "./components/singles/MyNavbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -15,7 +14,7 @@ import ProfileSection from "./components/singles/Profile";
 import ContactSection from "./components/singles/Contact";
 import FooterSection from "./components/singles/Footer";
 import ServicesSection from "./components/singles/Services";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);

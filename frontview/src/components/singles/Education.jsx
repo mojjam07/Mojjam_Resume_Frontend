@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/education.scss";
-import { API_URL } from "../../services/api";
+
 
 const EducationSection = () => {
   const [educationData, setEducationData] = useState([]);

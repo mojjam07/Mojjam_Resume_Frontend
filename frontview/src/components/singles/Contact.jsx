@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/contact.scss";
-import { API_URL } from "../../services/api";
+import AxiosInstance from "../../services/AxiosInstance";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,8 +10,6 @@ const ContactSection = () => {
     email: "",
     message: "",
   });
-
-  // const API_URL = import.meta.env.VITE_API_URL;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,22 +22,18 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${API_URL}/api/contacts/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      alert("Your message has been sent!");
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } else {
+    try {
+      const response = await AxiosInstance.post("/api/contacts/", formData);
+      if (response.status === 201) {
+        alert("Your message has been sent!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
       alert("There was an issue sending your message. Please try again.");
     }
   };
