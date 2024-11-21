@@ -1,33 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import Loading from "../../components/singles/Loading";
+import AxiosInstance from "../../services/AxiosInstance";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/projects.scss";
-import { API_URL } from "../../services/api";
 
 const ProjectSection = () => {
   const [projects, setProjects] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // const API_URL = import.meta.env.VITE_API_URL;
-
   useEffect(() => {
     // Simulate a delay before fetching data
     setTimeout(() => {
-      fetch(`${API_URL}/api/projects/`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }) // Replace with your actual API URL
+      AxiosInstance.get("/api/projects/")
         .then((response) => {
-          if (!response.ok) {
-            throw new Error("Failed to fetch projects data");
-          }
-          return response.json();
-        })
-        .then((data) => {
+          const data = response.data;
           const formattedData = data.map((project) => ({
             ...project,
             technologies: project.technologies

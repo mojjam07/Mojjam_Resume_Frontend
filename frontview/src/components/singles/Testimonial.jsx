@@ -12,39 +12,32 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import "../../styles/testimonials.scss";
-import { API_URL } from "../../services/api";
+import AxiosInstance from "../../services/AxiosInstance";
 
 const TestimonialSection = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [firstThreeTestimonials, setFirstThreeTestimonials] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [showFormModal, setShowFormModal] = useState(false); // For the form modal
-  const [image, setImage] = useState(null); // State to store the image file
-  const [loading, setLoading] = useState(true); // State to manage loading
+  const [showFormModal, setShowFormModal] = useState(false);
+  const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      fetch(`${API_URL}/api/testimonials`)
+      AxiosInstance.get("/api/testimonials")
         .then((response) => {
-          if (!response.ok) {
-            throw new Error("Failed to fetch testimonials");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setTestimonials(data);
-          setFirstThreeTestimonials(data.slice(0, 3)); // Display first three
+          setTestimonials(response.data);
+          setFirstThreeTestimonials(response.data.slice(0, 3));
           setLoading(false);
         })
         .catch((error) => {
           console.error("Error fetching testimonials:", error);
-          setLoading(false); // Stop loading even if there's an error
+          setLoading(false);
         });
     }, 3000); // Simulate a 3-second loading delay
   }, []);
 
-  // Handle form submission
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -54,16 +47,12 @@ const TestimonialSection = () => {
       formData.append("image", image);
     }
 
-    // Submit form data with image to the backend
-    fetch(`${API_URL}/api/newtestimonials`, {
-      //fetch("http://localhost:8000/api/newtestimonials/", {
-      method: "POST",
-      body: formData,
+    AxiosInstance.post("/api/newtestimonials", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        setShowFormModal(false); // Close the form modal after submission
+      .then((response) => {
+        console.log("Success:", response.data);
+        setShowFormModal(false);
         alert(
           "Your testimony has already been sent to the admin,\n it will be published if approved!"
         );
@@ -73,7 +62,6 @@ const TestimonialSection = () => {
       });
   };
 
-  // Handle image upload
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
   };
@@ -95,7 +83,7 @@ const TestimonialSection = () => {
                       src={
                         testimonial.profile_picture ||
                         "path/to/default-image.jpg"
-                      } // Use default image if profilePicture is missing
+                      }
                       roundedCircle
                       className="mb-3"
                       alt={testimonial.name}
@@ -119,7 +107,6 @@ const TestimonialSection = () => {
         </div>
       </Container>
 
-      {/* More Testimonials Modal */}
       <Modal show={showModal} onHide={() => setShowModal(false)} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>More Testimonials</Modal.Title>
@@ -134,7 +121,7 @@ const TestimonialSection = () => {
                       src={
                         testimonial.profile_picture ||
                         "path/to/default-image.jpg"
-                      } // Use default image if profilePicture is missing
+                      }
                       roundedCircle
                       className="mb-3"
                       alt={testimonial.name}
@@ -156,7 +143,6 @@ const TestimonialSection = () => {
         </Modal.Footer>
       </Modal>
 
-      {/* Plus Icon that triggers the form modal */}
       <div className="plus-icon-container">
         <FontAwesomeIcon
           icon={faPlus}
@@ -165,7 +151,6 @@ const TestimonialSection = () => {
         />
       </div>
 
-      {/* Form Modal */}
       <Modal
         show={showFormModal}
         onHide={() => setShowFormModal(false)}
