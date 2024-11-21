@@ -11,8 +11,8 @@ import {
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import "../../styles/testimonials.scss";
 import AxiosInstance from "../../services/AxiosInstance";
+import "../../styles/testimonials.scss";
 
 const TestimonialSection = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -22,43 +22,48 @@ const TestimonialSection = () => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Fetch testimonials on component mount
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      AxiosInstance.get("/api/testimonials")
-        .then((response) => {
-          setTestimonials(response.data);
-          setFirstThreeTestimonials(response.data.slice(0, 3));
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching testimonials:", error);
-          setLoading(false);
-        });
-    }, 3000); // Simulate a 3-second loading delay
+    AxiosInstance.get("/api/testimonials")
+      .then((response) => {
+        setTestimonials(response.data);
+        setFirstThreeTestimonials(response.data.slice(0, 3));
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching testimonials:", error);
+        setLoading(false);
+      });
   }, []);
 
+  // Handle form submission
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("name", e.target.formName.value);
-    formData.append("testimonial", e.target.formTestimonial.value);
+
+    const formData = new FormData(e.target);
     if (image) {
       formData.append("image", image);
+    } else {
+      alert("Please upload an image.");
+      return;
     }
 
-    AxiosInstance.post("/api/newtestimonials", formData, {
+    AxiosInstance.post("/api/testimonials", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((response) => {
-        console.log("Success:", response.data);
-        setShowFormModal(false);
-        alert(
-          "Your testimony has already been sent to the admin,\n it will be published if approved!"
+        // Update the state with the new testimonial
+        setTestimonials((prev) => [...prev, response.data]);
+        setFirstThreeTestimonials((prev) =>
+          [...prev, response.data].slice(0, 3)
         );
+        setShowFormModal(false);
+        alert("Your testimonial has been submitted successfully!");
       })
       .catch((error) => {
-        console.error("Error submitting form:", error);
+        console.error("Error submitting testimonial:", error);
+        alert("An error occurred while submitting your testimonial.");
       });
   };
 
@@ -73,8 +78,7 @@ const TestimonialSection = () => {
         <Row>
           {loading ? (
             <p>Loading testimonials...</p>
-          ) : Array.isArray(firstThreeTestimonials) &&
-            firstThreeTestimonials.length > 0 ? (
+          ) : firstThreeTestimonials.length > 0 ? (
             firstThreeTestimonials.map((testimonial, index) => (
               <Col md={4} key={index} className="mb-4">
                 <Card className="testimonial-card text-center">
@@ -97,7 +101,7 @@ const TestimonialSection = () => {
               </Col>
             ))
           ) : (
-            <p>No Single Testimonial Yet</p>
+            <p>No testimonials available yet.</p>
           )}
         </Row>
         <div className="text-center">
@@ -165,6 +169,7 @@ const TestimonialSection = () => {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
+                name="name"
                 placeholder="Enter your name"
                 required
               />
@@ -174,9 +179,9 @@ const TestimonialSection = () => {
               <Form.Label>Upload Image</Form.Label>
               <Form.Control
                 type="file"
+                name="image"
                 accept="image/*"
                 onChange={handleImageChange}
-                required
               />
             </Form.Group>
 
@@ -184,6 +189,7 @@ const TestimonialSection = () => {
               <Form.Label>Testimonial</Form.Label>
               <Form.Control
                 as="textarea"
+                name="testimonial"
                 rows={3}
                 placeholder="Write your testimonial"
                 required

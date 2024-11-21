@@ -23,7 +23,7 @@ const ContactSection = () => {
     e.preventDefault();
 
     try {
-      const response = await AxiosInstance.post("api/contacts/", formData);
+      const response = await AxiosInstance.post("/api/contacts", formData);
       if (response.status === 201) {
         alert("Your message has been sent!");
         setFormData({
