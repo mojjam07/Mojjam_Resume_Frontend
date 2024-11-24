@@ -3,7 +3,6 @@ import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/education.scss";
 
-
 const EducationSection = () => {
   const [educationData, setEducationData] = useState([]);
 
@@ -35,7 +34,16 @@ const EducationSection = () => {
         start_date: "05/2024",
         end_date: "10/2024",
         description:
-          "Gained a taste of what FullStack is all about with some technologies such as Python and JavaScript",
+          "I explored the fundamentals of Full Stack development using technologies like Python and JavaScript.",
+      },
+      {
+        degree: "Thaanawiyyah",
+        institution: "Arabic and Islamic Studies",
+        institution_name: "Rahmat El-Islaamiy Institute",
+        start_date: "01/2009",
+        end_date: "10/2014",
+        description:
+          "I Explored Arabic language and Islamic principles, focusing on foundational doctrines and teachings.",
       },
     ];
     setEducationData(localEducationData);

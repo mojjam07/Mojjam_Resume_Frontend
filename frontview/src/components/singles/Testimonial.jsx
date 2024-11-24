@@ -76,20 +76,17 @@ const TestimonialSection = () => {
   return (
     <section className="testimonial-section" id="testimonials">
       <Container>
-        <h2 className="text-center mb-5">Testimonials</h2>
+        <h2 className="text-center mb-5">Reviews</h2>
         <Row>
           {loading ? (
-            <p>Loading testimonials...</p>
+            <p>Loading reviews...</p>
           ) : firstThreeTestimonials.length > 0 ? (
             firstThreeTestimonials.map((testimonial, index) => (
               <Col md={4} key={index} className="mb-4">
                 <Card className="testimonial-card text-center">
                   <Card.Body>
                     <Image
-                      src={
-                        testimonial.profile_picture ||
-                        "path/to/default-image.jpg"
-                      }
+                      src={testimonial.image_url || "path/to/default-image.jpg"}
                       roundedCircle
                       className="mb-3"
                       alt={testimonial.name}
@@ -103,7 +100,7 @@ const TestimonialSection = () => {
               </Col>
             ))
           ) : (
-            <p>No testimonials available yet.</p>
+            <p>No reviews available yet.</p>
           )}
         </Row>
         <div className="text-center">
@@ -115,7 +112,7 @@ const TestimonialSection = () => {
 
       <Modal show={showModal} onHide={() => setShowModal(false)} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>More Testimonials</Modal.Title>
+          <Modal.Title>More Reviews</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Row>
@@ -124,10 +121,7 @@ const TestimonialSection = () => {
                 <Card className="testimonial-card text-center">
                   <Card.Body>
                     <Image
-                      src={
-                        testimonial.profile_picture ||
-                        "path/to/default-image.jpg"
-                      }
+                      src={testimonial.image_url || "path/to/default-image.jpg"}
                       roundedCircle
                       className="mb-3"
                       alt={testimonial.name}
@@ -163,7 +157,7 @@ const TestimonialSection = () => {
         size="lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Submit Testimonial</Modal.Title>
+          <Modal.Title>Submit a Review</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleFormSubmit} encType="multipart/form-data">
