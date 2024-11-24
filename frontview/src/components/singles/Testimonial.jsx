@@ -49,7 +49,7 @@ const TestimonialSection = () => {
       return;
     }
 
-    AxiosInstance.post("/api/testimonials", formData, {
+    AxiosInstance.post("/api/testimonials/", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then((response) => {
@@ -59,7 +59,9 @@ const TestimonialSection = () => {
           [...prev, response.data].slice(0, 3)
         );
         setShowFormModal(false);
-        alert("Your testimonial has been submitted successfully!");
+        alert(
+          "Your testimonial has been submitted successfully! \n It will be visible upon the approval of the admin"
+        );
       })
       .catch((error) => {
         console.error("Error submitting testimonial:", error);
