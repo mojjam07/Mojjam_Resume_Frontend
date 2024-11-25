@@ -16,6 +16,7 @@ const SkillsSection = () => {
       { name: "React", level: 75 },
       { name: "Django", level: 70 },
       { name: "React Native", level: 70 },
+      { name: "Tutoring", level: 99 },
     ];
     setSkills(localSkills);
   }, []);
