@@ -52,7 +52,9 @@ const ProjectSection = () => {
                   <Card.Img
                     variant="top"
                     className="fixed-size-img"
-                    src={project.image ? project.image : "default-image.jpg"}
+                    src={
+                      project.image ? project.image_url : "default-image.jpg"
+                    }
                     alt={project.title ? project.title : "No Title"}
                   />
                   <Card.Body>
